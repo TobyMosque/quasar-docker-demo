@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  app:
+    image: ${DOCKER_REGISTRY-}app
+    volumes:
+      - ./app:/src
+    networks:
+      app.network:
+      app.internal:
+        ipv4_address: "172.18.22.3"
+
+networks:
+  app.internal:
+    internal: true
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.22.0/24
+  app.network:
