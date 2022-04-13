@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  app:
+    image: ${DOCKER_REGISTRY-}ssr-app
+    build:
+      context: ./app
+      dockerfile: .Dockerfile
+      target: production-stage-ssr
+    volumes:
+      - app:/app
+    ports:
+      - "3000:3000"
+  
+volumes:
+  app:

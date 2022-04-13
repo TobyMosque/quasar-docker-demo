@@ -2,14 +2,15 @@ version: '3.4'
 
 services:
   app:
+    image: ${DOCKER_REGISTRY-}spa-app
     build:
       context: ./app
       dockerfile: .Dockerfile
-      target: production-stage
+      target: production-stage-spa
     volumes:
       - app:/app
     ports:
-      - "3000:3000"
+      - "3001:80"
   
 volumes:
   app:

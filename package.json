@@ -1,8 +1,14 @@
 {
   "scripts": {
-    "dev": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.dev.yml\" up",
-    "build": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.build.yml\" build",
-    "serve": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.build.yml\" up -d",
+    "dev": "yarn dev:ssr",
+    "build": "yarn build:ssr",
+    "serve": "yarn serve:ssr",
+    "dev:ssr": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.ssr.dev.yml\" up",
+    "build:ssr": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.ssr.build.yml\" build",
+    "serve:ssr": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.ssr.build.yml\" up -d",
+    "dev:spa": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.spa.dev.yml\" up",
+    "build:spa": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.spa.build.yml\" build",
+    "serve:spa": "docker-compose -f \"./docker-compose.yml\" -f \"./docker-compose.spa.build.yml\" up -d",
     "test": "echo \"No test specified\" && exit 0"
   }
 }

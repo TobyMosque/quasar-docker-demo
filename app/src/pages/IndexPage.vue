@@ -11,13 +11,13 @@
 
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/CompositionComponent.vue';
+import ExampleComponent from 'components/ExampleComponent.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: 'PageIndex',
+  name: 'IndexPage',
   components: { ExampleComponent },
-  setup() {
+  setup () {
     const todos = ref<Todo[]>([
       {
         id: 1,
